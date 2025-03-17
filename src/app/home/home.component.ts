@@ -41,7 +41,9 @@ export class HomeComponent {
     }
 
     this.filteredLocationList = this.housingLocationList.filter(
-      housingLocation  => housingLocation ?.city.toLowerCase().includes(text.toLowerCase())
+      housingLocation  => housingLocation?.city.toLowerCase().includes(text.toLowerCase()) || 
+                          housingLocation?.name.toLowerCase().includes(text.toLowerCase()) ||
+                          housingLocation?.state.toLowerCase().includes(text.toLowerCase())  
     )
   }
 
